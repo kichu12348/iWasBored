@@ -1,0 +1,171 @@
+body{
+    background: url('./images/backgroundImage.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding:10px;
+        height: 10vh;
+        width: 95vw;
+    }
+}
+
+#link{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #7d7979;
+    font-size: 20px;
+    padding: 10px 5px 10px 10px;
+    margin:0;
+    &:hover{
+        color: white;
+        transition: all 0.3s ease-in-out;
+        z-index: 2;
+    }
+}
+
+#image{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 20%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 20vh;
+    left: 35vw;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 5px 10px 10px;
+    margin:0;
+    word-wrap: break-word;
+}
+
+.styledButton{
+    background-color:rgb(255, 255, 255, 0.5);
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 35% 0 0 0;
+    
+    &:hover{
+        color: rgb(39, 39, 39);
+        background-color: white;
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+#life{
+    display: flex;
+    width: 95%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    margin-top: 1%;
+}
+
+.logo{
+    width: 8vw;
+    height: 4vw;
+    margin: 0;
+    padding: 0;
+    &:hover{
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+#contact{
+    width: 25vw;
+    height: 25vw;
+    margin: 8vw 0 0 40vw;
+    padding: 0;
+    &:hover{
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+}
+
+.contactIMG{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+@media screen and (max-width: 768px) {
+    #link{
+        font-size: 15px;
+        
+    }
+   
+    #image{
+        width: 50vh;
+        height: 50vh;
+        border-radius: 20%;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 260%;
+        left: 6%;
+    }
+
+    p{
+        font-size: 25px;
+    }
+
+    .styledButton{
+        font-size: 25px;
+        margin: 70% 0 0 0;
+    }
+
+    #life{
+        margin-top: 0;
+        
+    }
+    
+    .logo{
+        width: 12vh;
+        height: 6vh;
+        margin: 0;
+        padding: 0;
+        &:hover{
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+    }
+
+    #contact{
+        width: 20vh;
+        height: 20vh;
+        margin: 27vh 0 0 19vh;
+        padding: 0;
+    }
+
+}
