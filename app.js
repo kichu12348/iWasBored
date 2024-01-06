@@ -3,164 +3,115 @@ const lifee =`
 <p>Life is a journey, not a destination. Even if the journey is short, just remember your are shorter!</p>
 <button class='styledButton' onclick='rickRoll()'>Click!!</button>
 `;
+//homepage stuff on startup
+function startup(){
+const HomePageP= document.createElement('div');
+HomePageP.innerHTML = `<p>Welcome hooman!😀</p>`;
+HomePageP.id = 'homepageP';
+body.appendChild(HomePageP);
+}
+
+startup();
+
+//rick roll function
 
 const rickRoll =()=>{
-    window.open('https://youtu.be/xvFZjo5PgG0?si=IlLpzB-71CGrHH5_')
-    document.getElementById('life').remove();
-    document.getElementById('image').remove();
-    document.getElementById('about').remove();
-    document.getElementById('contact').remove();
+   window.open('https://youtu.be/xvFZjo5PgG0?si=IlLpzB-71CGrHH5_');
+   const id = ['image', 'life', 'about', 'contact', 'homepageP'];
+   for (let i = 0; i < id.length; i++) {
+      const element = id[i];
+      if (document.getElementById(element)) {
+         document.getElementById(element).remove();
+      }
+   }
 }
 
 
 const createNode = () => {
    if (document.getElementById('image')) {
       document.getElementById('image').remove();
-      
+      startup();
    }
-   else if (document.getElementById('life')) {
-      document.getElementById('life').remove();
-      const imageC = document.createElement('img');
-      imageC.src = './images/meme.jpg';
-      imageC.id = 'image';
-      body.appendChild(imageC);
-      
+   else{
+   const id = ['life', 'about', 'contact', 'homepageP'];
+   for (let i = 0; i < id.length; i++) {
+   const element = id[i];
+      if (document.getElementById(element)) {
+         document.getElementById(element).remove();
+         const imageC = document.createElement('img');
+         imageC.src = './images/meme.jpg';
+         imageC.id = 'image';
+         body.appendChild(imageC);
+      }
    }
-
-   else if (document.getElementById('about')) {
-    document.getElementById('about').remove();
-    const imageC = document.createElement('img');
-    imageC.src = './images/meme.jpg';
-    imageC.id = 'image';
-    body.appendChild(imageC);
-}
-
-else if (document.getElementById('contact')) {
-    document.getElementById('contact').remove();
-    const imageC = document.createElement('img');
-    imageC.src = './images/meme.jpg';
-    imageC.id = 'image';
-    body.appendChild(imageC);
-}
-   
-   else {
-    const imageC = document.createElement('img');
-    imageC.src = './images/meme.jpg';
-    imageC.id = 'image';
-    body.appendChild(imageC);
-   }
-  
+ }
 }
 
 
 const life =()=>{
-    if (document.getElementById('image')) {
-        document.getElementById('image').remove();
-        const div = document.createElement('div');
-        div.id = 'life';
-        div.innerHTML = lifee;
-        body.appendChild(div);
-        
-     }
-     else if (document.getElementById('life')) {
+     if (document.getElementById('life')) {
         document.getElementById('life').remove();
-        
+        startup();
      }
-
-     else if (document.getElementById('about')) {
-        document.getElementById('about').remove();
-        const div = document.createElement('div');
-        div.id = 'life';
-        div.innerHTML = lifee;
-        body.appendChild(div);
-     }
-     else if (document.getElementById('contact')) {
-        document.getElementById('contact').remove();
-        const div = document.createElement('div');
-        div.id = 'life';
-        div.innerHTML = lifee;
-        body.appendChild(div);
-     }
-     
-     else {
-        const div = document.createElement('div');
-        div.id = 'life';
-        div.innerHTML = lifee;
-        body.appendChild(div);
-
-     }
+    else{
+     const id = ['image', 'about', 'contact', 'homepageP'];
+       for (let i = 0; i < id.length; i++) {
+     const element = id[i];
+        if (document.getElementById(element)) {
+           document.getElementById(element).remove();
+           const div = document.createElement('div');
+           div.id = 'life';
+           div.innerHTML = lifee;
+           body.appendChild(div);
+        }
+      }
+   }
+    
 }
 
+const hmm = 'I made this because i was BORREEEEDDDDDD!!';
 
 const about =()=>{
-    if (document.getElementById('image')) {
-        document.getElementById('image').remove();
-        const about = document.createElement('div');
-        about.id = 'about';
-        about.innerHTML = `<p> I made this because i was BORREEEEDDDDDD!!</p>`
-        body.appendChild(about);
-        
-     }
-     else if (document.getElementById('life')) {
-        document.getElementById('life').remove();
-        const about = document.createElement('div');
-        about.id = 'about';
-        about.innerHTML = `<p> I made this because i was BORREEEEDDDDDD!!</p>`
-        body.appendChild(about);
-        
-     }
-     else if (document.getElementById('about')) {
+     if (document.getElementById('about')) {
         document.getElementById('about').remove();
-        
-     }
-     else if (document.getElementById('contact')) {
-        document.getElementById('contact').remove();
-        const about = document.createElement('div');
-        about.id = 'about';
-        about.innerHTML = `<p> I made this because i was BORREEEEDDDDDD!!</p>`
-        body.appendChild(about);
-     }
-     
-     else {
-        const about = document.createElement('div');
-        about.id = 'about';
-        about.innerHTML = `<p> I made this because i was BORREEEEDDDDDD!!</p>`
-        body.appendChild(about);
-     }
+        startup();
+      }
+
+     else{
+      const id = ['image', 'life', 'contact', 'homepageP'];
+        for (let i = 0; i < id.length; i++) {
+      const element = id[i];
+         if (document.getElementById(element)) {
+            document.getElementById(element).remove();
+            const about = document.createElement('div');
+            about.id = 'about';
+            about.innerHTML = `<p>${hmm}</p>`
+            body.appendChild(about);
+            
+         }
+       }
+    }
 }
 
 const contact =()=>{
-    if (document.getElementById('image')) {
-        document.getElementById('image').remove();
-        const contact = document.createElement('div');
-        contact.id = 'contact';
-        contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
-        body.appendChild(contact);
-    }
-    else if(document.getElementById('contact')){
+    if(document.getElementById('contact')){
         document.getElementById('contact').remove();
-    }
+         startup();
+      }
 
-    else if(document.getElementById('life')){
-        document.getElementById('life').remove();
-        const contact = document.createElement('div');
-        contact.id = 'contact';
-        contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
-        body.appendChild(contact);
-    }
-
-    else if (document.getElementById('about')){
-        document.getElementById('about').remove();
-        const contact = document.createElement('div');
-        contact.id = 'contact';
-        contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
-        body.appendChild(contact);
-    }
-
-    else {
-        const contact = document.createElement('div');
-        contact.id = 'contact';
-        contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
-        body.appendChild(contact);
+    else{
+      const id = ['image', 'life', 'about', 'homepageP'];
+        for (let i = 0; i < id.length; i++) {
+      const element = id[i];
+         if (document.getElementById(element)) {
+            document.getElementById(element).remove();
+            const contact = document.createElement('div');
+            contact.id = 'contact';
+            contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
+             body.appendChild(contact);
+            
+         }
+       }
     }
 }
+
