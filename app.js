@@ -149,10 +149,10 @@ const video =()=>{
           overlay.id = 'overlay';
           body.appendChild(overlay);
           const video = document.createElement('div');
-          const which = Math.floor(Math.random()*2);
+          const which = Math.floor(Math.random()*3);
           video.id = 'video';
           video.innerHTML = `
-          <video autoplay loop id="myVideo">
+          <video autoplay loop preload='auto' id="myVideo">
           <source src="./videos/${'video'+which}.mp4" type="video/mp4">
           </video>`;
          body.appendChild(video);
