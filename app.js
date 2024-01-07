@@ -1,8 +1,15 @@
 const body = document.body;
+
 const lifee =`
 <p>Life is a journey, not a destination. Even if the journey is short, just remember your are shorter!</p>
 <button class='styledButton' onclick='rickRoll()'>Click!!</button>
 `;
+//blur background function
+const backgrdBlur = (yes) =>{
+   if(yes===1){body.style.backdropFilter = 'blur(10px)';}
+   else if(yes===0){body.style.backdropFilter = 'blur(0px)';}
+}
+
 //homepage stuff on startup
 function startup(){
 const HomePageP= document.createElement('div');
@@ -26,6 +33,7 @@ const rickRoll = () =>{
    }
 }
 
+//image function
 
 const createNode = () => {
    if (document.getElementById('image')) {
@@ -42,11 +50,13 @@ const createNode = () => {
          imageC.src = './images/meme.jpg';
          imageC.id = 'image';
          body.appendChild(imageC);
+         backgrdBlur(0);
       }
    }
  }
 }
 
+//home function
 
 const life =()=>{
      if (document.getElementById('life')) {
@@ -63,18 +73,20 @@ const life =()=>{
            div.id = 'life';
            div.innerHTML = lifee;
            body.appendChild(div);
+           backgrdBlur(0);
         }
       }
    }
     
 }
 
-const hmm = 'I made this because i was BORREEEEDDDDDD!!';
+//about function
 
 const about =()=>{
+   const hmm = 'I made this because i was BORREEEEDDDDDD!!';
      if (document.getElementById('about')) {
         document.getElementById('about').remove();
-        startup();
+        startup(0);
       }
 
      else{
@@ -87,16 +99,18 @@ const about =()=>{
             about.id = 'about';
             about.innerHTML = `<p>${hmm}</p>`
             body.appendChild(about);
-            
+            backgrdBlur(0);
          }
        }
     }
 }
 
+//contact function
 const contact =()=>{
     if(document.getElementById('contact')){
         document.getElementById('contact').remove();
          startup();
+         backgrdBlur(0);
       }
 
     else{
@@ -108,17 +122,21 @@ const contact =()=>{
             const contact = document.createElement('div');
             contact.id = 'contact';
             contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
-             body.appendChild(contact);
-            
+            body.appendChild(contact);
+            backgrdBlur(1);
          }
        }
     }
 }
 
+//horror video function
+
 const video =()=>{
    if(document.getElementById('video')){
       document.getElementById('video').remove();
-       startup();
+      document.getElementsByClassName('overlay')[0].remove();
+      startup();
+      backgrdBlur(0);
     }
 
   else{
@@ -127,16 +145,21 @@ const video =()=>{
     const element = id[i];
        if (document.getElementById(element)) {
           document.getElementById(element).remove();
+          const overlay = document.createElement('div');
+          overlay.classList = 'overlay';
+          body.appendChild(overlay);
           const video = document.createElement('div');
           const which = Math.floor(Math.random()*2);
           console.log(which);
           video.id = 'video';
-          video.innerHTML = `<video autoplay loop id="myVideo">
+          video.innerHTML = `
+          <video autoplay loop id="myVideo">
           <source src="./videos/${'video'+which}.mp4" type="video/mp4">
           </video>`;
-           body.appendChild(video);
-          
+         body.appendChild(video);
+         backgrdBlur(1); 
        }
      }
   }
 }
+
