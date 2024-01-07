@@ -134,7 +134,7 @@ const contact =()=>{
 const video =()=>{
    if(document.getElementById('video')){
       document.getElementById('video').remove();
-      document.getElementsByClassName('overlay')[0].remove();
+      document.getElementsById('overlay').remove();
       startup();
       backgrdBlur(0);
     }
@@ -146,7 +146,7 @@ const video =()=>{
        if (document.getElementById(element)) {
           document.getElementById(element).remove();
           const overlay = document.createElement('div');
-          overlay.classList = 'overlay';
+          overlay.id = 'overlay';
           body.appendChild(overlay);
           const video = document.createElement('div');
           const which = Math.floor(Math.random()*2);

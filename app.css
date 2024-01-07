@@ -148,7 +148,7 @@ p{
     padding: 0;
 }
 
-.overlay{
+#overlay{
     position: fixed;
     top: 0;
     height: 100vh;
