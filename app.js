@@ -134,7 +134,7 @@ const contact =()=>{
 const video =()=>{
    if(document.getElementById('video')){
       document.getElementById('video').remove();
-      document.getElementsById('overlay').remove();
+      document.getElementById('overlay').remove();
       startup();
       backgrdBlur(0);
     }
