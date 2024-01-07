@@ -24,7 +24,7 @@ startup();
 
 const rickRoll = () =>{
    window.open('https://youtu.be/xvFZjo5PgG0?si=IlLpzB-71CGrHH5_');
-   const id = ['image', 'life', 'about', 'contact', 'homepageP', 'video'];
+   const id = ['image', 'life', 'about', 'contact', 'homepageP', 'video', 'overlay'];
    for (let i = 0; i < id.length; i++) {
       const element = id[i];
       if (document.getElementById(element)) {
@@ -41,7 +41,7 @@ const createNode = () => {
       startup();
    }
    else{
-   const id = ['life', 'about', 'contact', 'homepageP', 'video'];
+   const id = ['life', 'about', 'contact', 'homepageP', 'video', 'overlay'];
    for (let i = 0; i < id.length; i++) {
    const element = id[i];
       if (document.getElementById(element)) {
@@ -64,7 +64,7 @@ const life =()=>{
         startup();
      }
     else{
-     const id = ['image', 'about', 'contact', 'homepageP', 'video'];
+     const id = ['image', 'about', 'contact', 'homepageP', 'video', 'overlay'];
        for (let i = 0; i < id.length; i++) {
      const element = id[i];
         if (document.getElementById(element)) {
@@ -90,7 +90,7 @@ const about =()=>{
       }
 
      else{
-      const id = ['image', 'life', 'contact', 'homepageP', 'video'];
+      const id = ['image', 'life', 'contact', 'homepageP', 'video', 'overlay'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -114,7 +114,7 @@ const contact =()=>{
       }
 
     else{
-      const id = ['image', 'life', 'about', 'homepageP', 'video'];
+      const id = ['image', 'life', 'about', 'homepageP', 'video', 'overlay'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -150,7 +150,6 @@ const video =()=>{
           body.appendChild(overlay);
           const video = document.createElement('div');
           const which = Math.floor(Math.random()*2);
-          console.log(which);
           video.id = 'video';
           video.innerHTML = `
           <video autoplay loop id="myVideo">
