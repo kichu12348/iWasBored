@@ -140,6 +140,13 @@ p{
     margin-top: 20%;
  }
 
+#myVideo{
+    width: 100vw;
+    height: 80vh;
+    margin: 0 ;
+    padding: 0;
+}
+
 @media screen and (max-width: 768px) {
     #link{
         font-size: 15px;

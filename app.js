@@ -15,9 +15,9 @@ startup();
 
 //rick roll function
 
-const rickRoll =()=>{
+const rickRoll = () =>{
    window.open('https://youtu.be/xvFZjo5PgG0?si=IlLpzB-71CGrHH5_');
-   const id = ['image', 'life', 'about', 'contact', 'homepageP'];
+   const id = ['image', 'life', 'about', 'contact', 'homepageP', 'video'];
    for (let i = 0; i < id.length; i++) {
       const element = id[i];
       if (document.getElementById(element)) {
@@ -33,7 +33,7 @@ const createNode = () => {
       startup();
    }
    else{
-   const id = ['life', 'about', 'contact', 'homepageP'];
+   const id = ['life', 'about', 'contact', 'homepageP', 'video'];
    for (let i = 0; i < id.length; i++) {
    const element = id[i];
       if (document.getElementById(element)) {
@@ -54,7 +54,7 @@ const life =()=>{
         startup();
      }
     else{
-     const id = ['image', 'about', 'contact', 'homepageP'];
+     const id = ['image', 'about', 'contact', 'homepageP', 'video'];
        for (let i = 0; i < id.length; i++) {
      const element = id[i];
         if (document.getElementById(element)) {
@@ -78,7 +78,7 @@ const about =()=>{
       }
 
      else{
-      const id = ['image', 'life', 'contact', 'homepageP'];
+      const id = ['image', 'life', 'contact', 'homepageP', 'video'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -100,7 +100,7 @@ const contact =()=>{
       }
 
     else{
-      const id = ['image', 'life', 'about', 'homepageP'];
+      const id = ['image', 'life', 'about', 'homepageP', 'video'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -115,3 +115,28 @@ const contact =()=>{
     }
 }
 
+const video =()=>{
+   if(document.getElementById('video')){
+      document.getElementById('video').remove();
+       startup();
+    }
+
+  else{
+    const id = ['image', 'life', 'about', 'homepageP','contact'];
+      for (let i = 0; i < id.length; i++) {
+    const element = id[i];
+       if (document.getElementById(element)) {
+          document.getElementById(element).remove();
+          const video = document.createElement('div');
+          const which = Math.floor(Math.random()*2);
+          console.log(which);
+          video.id = 'video';
+          video.innerHTML = `<video autoplay loop id="myVideo">
+          <source src="./videos/${'video'+which}.mp4" type="video/mp4">
+          </video>`;
+           body.appendChild(video);
+          
+       }
+     }
+  }
+}
