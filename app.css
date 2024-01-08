@@ -36,14 +36,18 @@ body{
 }
 
 #image{
-    width: 30vw;
-    height: 30vw;
-    border-radius: 20%;
+    width: 100vw;
+    height: 86vh;
     margin: 0;
     padding: 0;
-    position: absolute;
-    top: 20vh;
-    left: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .imageIMG{
+        width: 35vw;
+        height: 35vw;
+        border-radius: 20px;
+    }
 }
 
 p{
@@ -162,17 +166,13 @@ p{
         font-size: 15px;
         
     }
-   
-    #image{
-        width: 50vh;
-        height: 50vh;
-        border-radius: 20%;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        top: 260%;
-        left: 6%;
+
+#image{
+    .imageIMG{
+        width: 54vh;
+        height: 54vh;
     }
+}
 
     p{
         font-size: 25px;

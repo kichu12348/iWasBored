@@ -1,14 +1,17 @@
 const body = document.body;
 
-const lifee =`
+const homE=`
 <p>Life is a journey, not a destination. Even if the journey is short, just remember your are shorter!</p>
 <button class='styledButton' onclick='rickRoll()'>Click!!</button>
 `;
-//blur background function
-const backgrdBlur = (yes) =>{
-   if(yes===1){body.style.backdropFilter = 'blur(10px)';}
-   else if(yes===0){body.style.backdropFilter = 'blur(0px)';}
+
+//remove overlay 
+const removeOverlay = () =>{
+   if(document.getElementById('overlay')){
+   document.getElementById('overlay').remove();
+   }
 }
+
 
 //homepage stuff on startup
 function startup(){
@@ -35,22 +38,22 @@ const rickRoll = () =>{
 
 //image function
 
-const createNode = () => {
+const createIMG = () => {
    if (document.getElementById('image')) {
       document.getElementById('image').remove();
       startup();
    }
    else{
-   const id = ['life', 'about', 'contact', 'homepageP', 'video', 'overlay'];
+   const id = ['life', 'about', 'contact', 'homepageP', 'video'];
    for (let i = 0; i < id.length; i++) {
    const element = id[i];
       if (document.getElementById(element)) {
          document.getElementById(element).remove();
-         const imageC = document.createElement('img');
-         imageC.src = './images/meme.jpg';
+         const imageC = document.createElement('div');
+         imageC.innerHTML = '<img src="./images/meme.jpg" class="imageIMG" />';
          imageC.id = 'image';
          body.appendChild(imageC);
-         backgrdBlur(0);
+         removeOverlay();
       }
    }
  }
@@ -58,22 +61,22 @@ const createNode = () => {
 
 //home function
 
-const life =()=>{
+const home =()=>{
      if (document.getElementById('life')) {
         document.getElementById('life').remove();
         startup();
      }
     else{
-     const id = ['image', 'about', 'contact', 'homepageP', 'video', 'overlay'];
+     const id = ['image', 'about', 'contact', 'homepageP', 'video'];
        for (let i = 0; i < id.length; i++) {
      const element = id[i];
         if (document.getElementById(element)) {
            document.getElementById(element).remove();
            const div = document.createElement('div');
            div.id = 'life';
-           div.innerHTML = lifee;
+           div.innerHTML = homE;
            body.appendChild(div);
-           backgrdBlur(0);
+           removeOverlay();
         }
       }
    }
@@ -90,7 +93,7 @@ const about =()=>{
       }
 
      else{
-      const id = ['image', 'life', 'contact', 'homepageP', 'video', 'overlay'];
+      const id = ['image', 'life', 'contact', 'homepageP', 'video'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -99,7 +102,7 @@ const about =()=>{
             about.id = 'about';
             about.innerHTML = `<p>${hmm}</p>`
             body.appendChild(about);
-            backgrdBlur(0);
+            removeOverlay();
          }
        }
     }
@@ -110,11 +113,10 @@ const contact =()=>{
     if(document.getElementById('contact')){
         document.getElementById('contact').remove();
          startup();
-         backgrdBlur(0);
-      }
+    }
 
     else{
-      const id = ['image', 'life', 'about', 'homepageP', 'video', 'overlay'];
+      const id = ['image', 'life', 'about', 'homepageP', 'video'];
         for (let i = 0; i < id.length; i++) {
       const element = id[i];
          if (document.getElementById(element)) {
@@ -123,7 +125,7 @@ const contact =()=>{
             contact.id = 'contact';
             contact.innerHTML = `<img src='./github.svg' class='contactIMG' onclick='rickRoll()'/>`;
             body.appendChild(contact);
-            backgrdBlur(1);
+            removeOverlay();
          }
        }
     }
@@ -136,7 +138,6 @@ const video =()=>{
       document.getElementById('video').remove();
       document.getElementById('overlay').remove();
       startup();
-      backgrdBlur(0);
     }
 
   else{
@@ -155,8 +156,7 @@ const video =()=>{
           <video autoplay loop preload='auto' id="myVideo">
           <source src="./videos/${'video'+which}.mp4" type="video/mp4">
           </video>`;
-         body.appendChild(video);
-         backgrdBlur(1); 
+         body.appendChild(video); 
        }
      }
   }
