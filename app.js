@@ -150,7 +150,7 @@ const video =()=>{
           overlay.id = 'overlay';
           body.appendChild(overlay);
           const video = document.createElement('div');
-          const which = Math.floor(Math.random()*3);
+          const which = Math.floor(Math.random()*4);
           video.id = 'video';
           video.innerHTML = `
           <video autoplay loop preload='auto' id="myVideo">
