@@ -5,8 +5,8 @@ body{
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100svw;
+    height: 100svh;
     position: relative;
     nav{
         display: flex;
@@ -37,7 +37,7 @@ body{
 
 #image{
     width: 100vw;
-    height: 86vh;
+    height: 86svh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -147,7 +147,7 @@ p{
 
 #myVideo{
     width: 100vw;
-    height: 80vh;
+    height: 80svh;
     margin: 0 ;
     padding: 0;
 }
@@ -155,7 +155,7 @@ p{
 #overlay{
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     z-index: -1;
     background-color: rgba(0, 0, 0, .9);
@@ -169,7 +169,7 @@ p{
 
 #image{
     .imageIMG{
-        width: 54vh;
+        width: 54svh;
         height: 54vh;
     }
 }
